@@ -1,59 +1,51 @@
-<header>
+# Survey Application
 
-<!--
-  <<< Author notes: Course header >>>
-  Include a 1280×640 image, course title in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Add your open source license, GitHub uses MIT license.
--->
+A web application using React and Supabase with two distinct portals: one for surveyors to view responses and another for respondents to submit their information.
 
-# GitHub Pages
+## Features
 
-_Create a site or blog from your GitHub repositories with GitHub Pages._
+### Respondent Portal
+- Public access interface for submitting survey responses
+- Form validation for name and age inputs
+- Success messages after successful submission
+- Mobile-responsive design
 
-</header>
+### Surveyor Portal
+- Password protected access (password: 4268)
+- View all responses in a sortable table
+- Sort by name, age, or timestamp
+- Real-time updates when new responses are added
+- Export data as CSV
 
-<!--
-  <<< Author notes: Step 2 >>>
-  Start this step by acknowledging the previous step.
-  Define terms and link to docs.github.com.
-  Historic note: previous version checked for empty pull request, changed to the correct theme `minima`.
--->
+## Technology Stack
 
-## Step 2: Configure your site
+- React with TypeScript
+- Tailwind CSS for styling
+- React Router for navigation
+- Supabase for backend database and real-time functionality
 
-_You turned on GitHub Pages! :tada:_
+## Setup Instructions
 
-We'll work in a branch, `my-pages`, that I created for you to get this site looking great. :sparkle:
-
-Jekyll uses a file titled `_config.yml` to store settings for your site, your theme, and reusable content like your site title and GitHub handle. You can check out the `_config.yml` file on the **Code** tab of your repository.
-
-We need to use a blog-ready theme. For this activity, we will use a theme named "minima".
-
-### :keyboard: Activity: Configure your site
-
-1. Browse to the `_config.yml` file in the `my-pages` branch.
-1. In the upper right corner, open the file editor.
-1. Add a `theme:` set to **minima** so it shows in the `_config.yml` file as below:
-   ```yml
-   theme: minima
+1. Clone the repository
+2. Install dependencies with `npm install`
+3. Create a Supabase account and project at [supabase.com](https://supabase.com)
+4. Set up the SQL database by running the migration in `supabase/migrations/create_responses_table.sql`
+5. Create a `.env` file in the root directory with:
    ```
-1. (optional) You can modify the other configuration variables such as `title:`, `author:`, and `description:` to further customize your site.
-1. Commit your changes.
-1. (optional) Create a pull request to view all the changes you'll make throughout this course. Click the **Pull Requests** tab, click **New pull request**, set `base: main` and `compare:my-pages`.
-1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+6. Start the development server with `npm run dev`
 
-<footer>
+## Deployment
 
-<!--
-  <<< Author notes: Footer >>>
-  Add a link to get support, GitHub status page, code of conduct, license link.
--->
+This application can be deployed to Netlify with the following steps:
 
----
+1. Push your code to a GitHub repository
+2. Connect your repository to Netlify
+3. Set up environment variables in Netlify's dashboard
+4. Configure continuous deployment from the main branch
 
-Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/github-pages) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
+## License
 
-&copy; 2023 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
-
-</footer>
+MIT
